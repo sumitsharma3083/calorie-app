@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calorie count</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- heading header -->
+    <header>
+        <div class="container header_container">
+                <span class="heading_name">
+                        CountCalorie
+                </span> 
+                <button class="clrAllBtn">
+                    Clear all
+                </button>
+        </div>
+    </header>
+  
+    <!-- main content -->
+    <div class="content_container">
+      <h5 class="add_meal_text">Add meal/ Food item</h5>
+       <div class="inputs">
+             <div>
+                    <label>Meal</label> <br>
+                    <input type="text" class="food_name" placeholder="Add item">
+             </div>
+             <div>
+                    <label>Calories</label> <br>
+                    <input type="number" placeholder="Add calorie" class="food_calorie">
+             </div>
+             <div class="btn_operations">
+                    <button class="addItem_btn">
+                            <i class="fas fa-plus"></i>  Add Meal
+                    </button>
+                    <button class="updateItem_btn">
+                            <i class="fas fa-pencil-alt"></i> Update Meal
+                    </button>
+                    <button class="deleteItem_btn">
+                            <i class="far fa-trash-alt"></i> Delete Meal
+                    </button>
+             </div>
+       </div>
+    </div>
+         <h1 class="display_cal">Total calories: <span class="calAmount">0</span></h1>
+
+         <ul class="listOfItems">
+             
+         </ul>
+    <script src="js/custom.js">
+    </script>
+</body>
+</html>

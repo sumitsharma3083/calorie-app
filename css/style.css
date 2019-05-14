@@ -1,0 +1,135 @@
+header{
+  background-color: #0A79DF;
+}
+.header_container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0px;
+}
+.header_container button{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    background-color: #74B9FF;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+}
+.content_container{
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1.5px solid #ddd;
+}
+.inputs{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    box-sizing: border-box;
+}
+.add_meal_text{
+    opacity: 0.7;
+}
+.food_name, .food_calorie{
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.food_name:focus{
+    outline: none;
+    border-bottom-color: #4834DF;
+}
+.food_calorie:focus{
+    outline: none;
+    border-bottom-color: #4834DF;
+}
+.display_cal{
+ width: 70%;
+ margin: auto;
+ text-align: center;
+}
+.addItem_btn{
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+    background-color: #0A79DF;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+}
+.addItem_btn:focus{
+    outline: none;
+}
+.heading_name{
+    color: #fff;
+}
+.listOfItems{
+    width: 60%;
+    margin: auto;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+.particular_item{
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+.meals_container{
+    display: inline-block;
+}
+.edit_btn{
+    float: right;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.meal_name{
+   text-transform: capitalize;
+  font-weight: 600;
+  padding-right: 4px;
+}
+.meal_cal{
+      font-family: cursive;
+      color: #999;
+}
+.btn_operations{
+    padding: 10px 0px;
+}
+.edit_btn:focus{
+outline: none;
+}
+.updateItem_btn{
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+    background-color: #F4C724;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    display: none;
+}
+.updateItem_btn:focus, .deleteItem_btn:focus{
+    outline: none;
+}
+.deleteItem_btn{
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+    background-color: #E71C23;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    display: none;
+}
