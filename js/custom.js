@@ -105,7 +105,7 @@ updateBtn.addEventListener('click', function(){
 
              arrayOfItems.forEach(obj => {
                 calAmt.innerHTML = Number(calAmt.innerHTML) + Number(obj.mealCal)
-                listOfItems.innerHTML += `<li class="particular_item"><div class="meals_container"><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}") ><i class="fas fa-pencil-alt"></i></button></li>`
+                listOfItems.innerHTML += `<li class="particular_item"><div class="meals_container"><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span><button class="edit_btn" onclick=editing("${obj.mealname}") ><i class="fas fa-pencil-alt"></i></button></div></li>`
              });
         localStorage.setItem('meals', JSON.stringify(arrayOfItems))
 
@@ -127,7 +127,7 @@ deleteBtn.addEventListener('click', function(){
 
              arrayOfMeal.forEach(obj => {
                 calAmt.innerHTML = Number(calAmt.innerHTML) + Number(obj.mealCal)
-                listOfItems.innerHTML += `<li class="particular_item"><div class="meals_container"><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}") ><i class="fas fa-pencil-alt"></i></button></li>`
+                listOfItems.innerHTML += `<li class="particular_item"><div class="meals_container"><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span><button class="edit_btn" onclick=editing("${obj.mealname}") ><i class="fas fa-pencil-alt"></i></button></div></li>`
              });
           localStorage.setItem('meals', JSON.stringify(arrayOfMeal))
           foodName_input.value = null
