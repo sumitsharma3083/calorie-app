@@ -12,13 +12,13 @@ var updateBtn = document.querySelector('.updateItem_btn')
 var deleteBtn = document.querySelector('.deleteItem_btn')
 
 
-   if(localStorage.getItem('meals') != null)
+   if(localStorage.getItem('meals') !== null)
    {
          
          let arr = JSON.parse(localStorage.getItem('meals'))
            arr.forEach(obj => {
                 calAmt.innerHTML = Number(calAmt.innerHTML) + Number(obj.mealCal)
-                 listOfItems.innerHTML +=  `<li class="particular_item"><div><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}")><i class="fas fa-pencil-alt"></i></button></li>`
+                 listOfItems.innerHTML +=  `<li class="particular_item"><div><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span><button class="edit_btn" onclick=editing("${obj.mealname}")><i class="fas fa-pencil-alt"></i></button></div></li>`
            });
    } 
 
@@ -32,7 +32,7 @@ var deleteBtn = document.querySelector('.deleteItem_btn')
           if(localStorage.getItem('meals') == null){
               let arr = [];
               calAmt.innerHTML = Number(calAmt.innerHTML)+Number(obj.mealCal)
-              listOfItems.innerHTML += `<li class="particular_item"><div><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}")><i class="fas fa-pencil-alt"></i></button></li>`
+              listOfItems.innerHTML += `<li class="particular_item"><div><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span><button class="edit_btn" onclick=editing("${obj.mealname}")><i class="fas fa-pencil-alt"></i></button></div></li>`
                arr.push(obj)
               localStorage.setItem('meals', JSON.stringify(arr))  
           }
@@ -43,7 +43,7 @@ var deleteBtn = document.querySelector('.deleteItem_btn')
               arr.push(obj)
 
                 arr.forEach(obj => {
-                  listOfItems.innerHTML += `<li class="particular_item"><div><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}")><i class="fas fa-pencil-alt"></i></button></li>`
+                  listOfItems.innerHTML += `<li class="particular_item"><div><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span><button class="edit_btn" onclick=editing("${obj.mealname}")><i class="fas fa-pencil-alt"></i></button></div></li>`
                      });
             
                    calAmt.innerHTML = Number(calAmt.innerHTML) + Number(obj.mealCal)
