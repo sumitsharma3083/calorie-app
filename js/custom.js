@@ -24,7 +24,7 @@ var deleteBtn = document.querySelector('.deleteItem_btn')
 
    addFoodBtn.addEventListener('click', function()
    {
-     if(foodName_input.value != '' && foodCal_input.value != ''){
+     if(foodName_input.value !== '' && foodCal_input.value > 0){
          var  obj = {
              mealname: foodName_input.value,
              mealCal : foodCal_input.value
@@ -87,31 +87,37 @@ function editing(val){
 
 
 updateBtn.addEventListener('click', function(){
-    
-     listOfItems.innerHTML = null
-     calAmt.innerHTML      = null
-      
-       let arrayOfItems = JSON.parse(localStorage.getItem('meals'))
-         
-           let obj = {
-               mealname:  foodName_input.value ,
-               mealCal : foodCal_input.value
-           }
+  
+  let obj = {
+    mealname:  foodName_input.value ,
+    mealCal : foodCal_input.value
+}
+  
+           if(obj.mealname !== '' && obj.mealCal > 0){
+            listOfItems.innerHTML = null
+            calAmt.innerHTML      = null
+             
+              let arrayOfItems = JSON.parse(localStorage.getItem('meals'))
+                
+              
+       
+            let findIndex = arrayOfItems.findIndex((obj)=>{
+              return obj.mealname == updateBtn.getAttribute('meal_name')
+         })
+            arrayOfItems.splice(findIndex, 1, obj)
+  
+               arrayOfItems.forEach(obj => {
+                  calAmt.innerHTML = Number(calAmt.innerHTML) + Number(obj.mealCal)
+                  listOfItems.innerHTML += `<li class="particular_item"><div class="meals_container"><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}") ><i class="fas fa-pencil-alt"></i></button></li>`
+               });
+          localStorage.setItem('meals', JSON.stringify(arrayOfItems))
+  
+         addFoodBtn.style.display = 'block'
+         updateBtn.style.display  = 'none'
+         deleteBtn.style.display  = 'none'
+              }
      
-       let findIndex = arrayOfItems.findIndex((obj)=>{
-            return obj.mealname == updateBtn.getAttribute('meal_name')
-       })
-          arrayOfItems.splice(findIndex, 1, obj)
-
-             arrayOfItems.forEach(obj => {
-                calAmt.innerHTML = Number(calAmt.innerHTML) + Number(obj.mealCal)
-                listOfItems.innerHTML += `<li class="particular_item"><div class="meals_container"><span class="meal_name">${obj.mealname}</span>:<span class="meal_cal">${obj.mealCal} calories</span></div><button class="edit_btn" onclick=editing("${obj.mealname}") ><i class="fas fa-pencil-alt"></i></button></li>`
-             });
-        localStorage.setItem('meals', JSON.stringify(arrayOfItems))
-
-       addFoodBtn.style.display = 'block'
-       updateBtn.style.display  = 'none'
-       deleteBtn.style.display  = 'none'
+      
 })
 
 deleteBtn.addEventListener('click', function(){
